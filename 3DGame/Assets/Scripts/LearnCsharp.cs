@@ -5,12 +5,12 @@ public class LearnCsharp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        print("123"); 
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        print("4564556456");
     }
 }
