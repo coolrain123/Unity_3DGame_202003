@@ -10,6 +10,13 @@ public class LearnMemberStatics : MonoBehaviour
 
     public Camera cam;
 
+    public GameObject cube;
+    public GameObject sphere;
+
+    //public Sprite sprite;
+    //public GameObject sprite;
+    public SpriteRenderer KID;
+
     private void Start()
     {
         print(Random.value);
@@ -20,8 +27,22 @@ public class LearnMemberStatics : MonoBehaviour
         print(Mathf.Abs(-999));
         print(Mathf.PI);
 
-        print(cam.depth);
-        print("攝影機數量:" + Camera.allCamerasCount);
+        //print(cam.depth);
+       // print("攝影機數量:" + Camera.allCamerasCount);
+
+
+        print(cube.layer);
+        print(sphere.layer);
+
+        cube.SetActive(true);
+        sphere.SetActive(false);
+
+        cube.layer = 5;
+
+
+
+       
         
+       
     }
 }
