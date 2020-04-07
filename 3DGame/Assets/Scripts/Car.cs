@@ -18,4 +18,13 @@ public class Car : MonoBehaviour
         print("開空調啦!!!");
         return true;
     }
+
+    public void Fly()
+    {
+        print("飛起來啦");
+    }
+    public void Fly(float height)
+    {
+        print("飛到高度" + height);
+    }
 }

@@ -12,5 +12,7 @@ public class CarManager : MonoBehaviour
         Car1.Drive(123456.6f , "BANGGGGGG");  //()內為引數
 
         print("汽車1號是否開啟空調 :" + Car1.cool());
+        Car1.Fly();
+        Car1.Fly(123.5f);
     }
 }
