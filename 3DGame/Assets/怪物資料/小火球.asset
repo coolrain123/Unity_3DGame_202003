@@ -15,3 +15,5 @@ MonoBehaviour:
   atk: 100
   hp: 100
   speed: 0
+  propHpPer: 0.3
+  propSpeedPer: 0.8
