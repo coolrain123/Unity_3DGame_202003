@@ -10,15 +10,22 @@ public class Monster : MonoBehaviour
     public GameObject propHp;
     [Header("加速藥水")]
     public GameObject propCd;
+    [Header("子彈")]
+    public GameObject bullet;
 
 
     private Animator ani;
     private float hp;
+    private float timer;
 
     private void Start()
     {
         hp = Data.hp;
         ani = GetComponent<Animator>();
+    }
+    private void Update()
+    {
+        Attack();
     }
 
     /// <summary>
@@ -49,4 +56,18 @@ public class Monster : MonoBehaviour
         float rCd = Random.Range(0f, 1f);
         if (rCd < Data.propSpeedPer) Instantiate(propCd, transform.position + Vector3.right * Random.Range(-2f, 2f), Quaternion.identity);
     }
+    public void Attack()
+    {
+        timer  += Time.deltaTime;
+        if (timer >= Data.cd)
+        {
+            ani.SetTrigger("Attack");
+            timer = 0;
+            GameObject temp = Instantiate(bullet, transform.position +transform.forward + transform.up*2, Quaternion.identity);
+            temp.AddComponent<Move>().moveSpeed = Data.bulletSpeed;            
+            temp.GetComponent<Ball>().damage = Data.atk;
+            temp.GetComponent<Ball>().type = "怪物";
+        }
+    }
+
 }

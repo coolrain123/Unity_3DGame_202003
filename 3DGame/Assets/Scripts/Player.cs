@@ -60,9 +60,10 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if (ani.GetBool("Dead")) return;
         Move();
         Attack();
-        imgHp.fillAmount = hp / hpMax;
+        
 
     }
 
@@ -96,18 +97,18 @@ public class Player : MonoBehaviour
 
         temp.AddComponent<Ball>();                  // 暫存火球.添加元件<球>()
         temp.GetComponent<Ball>().damage = attack;  // 暫存火球.取得元件<球>().傷害值 = 攻擊力
-
+        temp.GetComponent<Ball>().type = "玩家";
         // Quaternion.identity Unity 角度類型 - 零角度
 
         temp.GetComponent<Rigidbody>().AddForce(0, 0, speedFireBall);
     }
 
-    private void eatPropCd()
+    private void eatPropCd()//吃加速水
     {
         cd -= 0.2f;
         cd = Mathf.Clamp(cd, 0.4f, 100);
     }
-    private void eatPropHp()
+    private void eatPropHp()//吃補
     {
         StartCoroutine(hpRecover());
     }
@@ -138,5 +139,23 @@ public class Player : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="damage">受到的傷害</param>
+    public void Damage(float damage)
+    {
+        print("受到的傷害" + damage);
+        hp -= damage;
+        imgHp.fillAmount = hp / hpMax;
+        if (hp <= 0) Dead();
+        
+    }
+    public void Dead()
+    {
+        ani.SetBool("Dead", true);
+       
+        
+    }
 }
 
