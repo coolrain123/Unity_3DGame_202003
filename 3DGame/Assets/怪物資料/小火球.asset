@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce00276baf85a046a1edd610527897c, type: 3}
   m_Name: "\u5C0F\u706B\u7403"
   m_EditorClassIdentifier: 
-  atk: 10
+  atk: 20
   hp: 100
   speed: 0
   propHpPer: 0.3
   propSpeedPer: 0.3
-  cd: 2
+  cd: 1.5
   bulletSpeed: 10

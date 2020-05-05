@@ -34,12 +34,20 @@ public class Monster : MonoBehaviour
     /// <param name="damage">受到的傷害</param>
     public void Damage(float damage)
     {
-        print("受到的傷害" + damage);
+        
         hp -= damage;
+        GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
+        Invoke("reColor",0.2f);
         if (hp <= 0)
         {
             Dead();
         }
+    }
+
+    private void reColor()
+    {
+        GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;
+
     }
     public void Dead()
     {

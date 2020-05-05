@@ -6,9 +6,11 @@ public class SpawnManager : MonoBehaviour
     [Header("關卡生怪資料")]
     public SpawnData data;
 
+    private GameManager gm;
     private void Start()
     {
-        
+        gm = FindObjectOfType<GameManager>();
+        StartCoroutine(SpawnMonster());
     }
 
     private IEnumerator SpawnMonster()
@@ -16,7 +18,18 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < data.spawn.Length; i++)
         {
             yield return new WaitForSeconds(data.spawn[i].time);
-            //Instantiate(data.spawn[i].Monsters, transform.position, Quaternion.identity);
+
+            for (int j = 0; j < data.spawn[i].Monsters.Length; j++)
+            {
+                Vector3 pos = new Vector3(data.spawn[i].Monsters[j].x, 17, 50);
+
+                Quaternion qua = Quaternion.Euler(0, 180, 0);
+
+                Instantiate(data.spawn[i].Monsters[j].Monster, pos, qua);
+
+            }
         }
+        yield return new WaitForSeconds(5);
+        gm.Win();
     }
 }

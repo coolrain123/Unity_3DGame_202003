@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 9210515662420495260}
   - component: {fileID: 9210515662420495267}
   - component: {fileID: 9210515662420495261}
+  - component: {fileID: 6330644575430527382}
   m_Layer: 0
   m_Name: "\u8759\u8760"
   m_TagString: "\u602A\u7269"
@@ -133,7 +134,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!135 &9210515662420495267
 SphereCollider:
@@ -164,6 +165,19 @@ MonoBehaviour:
   propHp: {fileID: 1000012970591572, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
   propCd: {fileID: 1000013846074356, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
   bullet: {fileID: 744991172978139140, guid: 418751af8d2c6f3478f7b625514c38fa, type: 3}
+--- !u!114 &6330644575430527382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9210515663940921989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e74d60785b69884a80a1316a2f512f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
 --- !u!1 &9210515663940921991
 GameObject:
   m_ObjectHideFlags: 0

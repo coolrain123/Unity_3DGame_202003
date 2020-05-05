@@ -15,7 +15,7 @@ MonoBehaviour:
   atk: 20
   hp: 100
   speed: 1
-  propHpPer: 0.3
+  propHpPer: 1
   propSpeedPer: 0.6
-  cd: 1
+  cd: 2
   bulletSpeed: 10

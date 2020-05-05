@@ -24,13 +24,13 @@ MonoBehaviour:
     Monsters:
     - Monster: {fileID: 4981460650833226813, guid: 8ac04b1a4870b6945b930d8a768e3615,
         type: 3}
-      x: 46
+      x: 40
     - Monster: {fileID: 4981460650833226813, guid: 8ac04b1a4870b6945b930d8a768e3615,
         type: 3}
-      x: 54
+      x: 60
   - name: "\u7B2C3\u6CE2"
-    time: 10
+    time: 3
     Monsters:
     - Monster: {fileID: 9210515663940921989, guid: 86c3521f16a23dd4f93b59c0cecd3aef,
         type: 3}
-      x: 1
+      x: 50

@@ -22,13 +22,14 @@ public class Player : MonoBehaviour
     [Header("攻擊力"), Range(1, 5000)]
     public float attack = 35;
     [Header("血量"), Range(1, 5000)]
-    public float hp = 35;
-    public float hpMax = 100;
+    public float hp ;
+    public float hpMax ;
 
     public Image imgHp;
 
     private float timer;
     private Animator ani;
+    private GameManager gm;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
        // hp = hpMax;
         imgHp.fillAmount = hp / hpMax;
 
+        gm = FindObjectOfType<GameManager>();
     }
 
     /// <summary>
@@ -110,7 +112,10 @@ public class Player : MonoBehaviour
     }
     private void eatPropHp()//吃補
     {
-        StartCoroutine(hpRecover());
+        StartCoroutine(HpRecover());
+        //hp += 50;
+        //hp = Mathf.Clamp(hp, 0, hpMax);
+        //imgHp.fillAmount = hp / hpMax;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -121,20 +126,21 @@ public class Player : MonoBehaviour
         }
         if (other.tag == "補血")
         {
+            
             eatPropHp();
             Destroy(other.gameObject);
         }
     }
-    private IEnumerator hpRecover()
+    private IEnumerator HpRecover()
     {
-       float hpAdd =  hp += 20;
+       float hpAdd =  hp + 70;
 
-        if (hp < hpAdd)
+        while(hp < hpAdd)
         {
             hp++;
+            hp = Mathf.Clamp(hp, 0, hpMax);
             imgHp.fillAmount = hp / hpMax;
-            hp = Mathf.Clamp(hp, 0, 100);
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
         }
         
     }
@@ -145,7 +151,7 @@ public class Player : MonoBehaviour
     /// <param name="damage">受到的傷害</param>
     public void Damage(float damage)
     {
-        print("受到的傷害" + damage);
+        if (gm.passLv) return;
         hp -= damage;
         imgHp.fillAmount = hp / hpMax;
         if (hp <= 0) Dead();
@@ -154,7 +160,7 @@ public class Player : MonoBehaviour
     public void Dead()
     {
         ani.SetBool("Dead", true);
-       
+        gm.Lose();
         
     }
 }
