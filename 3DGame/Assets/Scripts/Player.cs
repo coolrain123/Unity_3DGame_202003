@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
+    
+    public static float hp = 200;  //靜態static 會繼承到下一場景
+    public static float delayFire = 0.5f;
 
     [Header("移動速度"), Range(1, 1000)]
     public float speed = 300;
@@ -13,16 +15,14 @@ public class Player : MonoBehaviour
     public Joystick joy;
     [Header("攻擊冷卻時間"), Range(0.1f, 10)]
     public float cd = 1;
-    [Header("延遲生成火球時間")]
-    public float delayFire = 0.5f;
+   
     [Header("火球")]
     public GameObject fireBall;
     [Header("火球移動速度"), Range(1, 5000)]
     public float speedFireBall = 300;
     [Header("攻擊力"), Range(1, 5000)]
     public float attack = 35;
-    [Header("血量"), Range(1, 5000)]
-    public float hp ;
+   
     public float hpMax ;
 
     public Image imgHp;
