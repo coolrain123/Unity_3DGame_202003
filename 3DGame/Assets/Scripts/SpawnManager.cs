@@ -21,7 +21,7 @@ public class SpawnManager : MonoBehaviour
 
             for (int j = 0; j < data.spawn[i].Monsters.Length; j++)
             {
-                Vector3 pos = new Vector3(data.spawn[i].Monsters[j].x, 17, 50);
+                Vector3 pos = new Vector3(data.spawn[i].Monsters[j].x, 17, 55);
 
                 Quaternion qua = Quaternion.Euler(0, 180, 0);
 
@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
 
             }
         }
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         gm.Win();
     }
 }

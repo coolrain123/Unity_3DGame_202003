@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: 3DGame
+  companyName: CoolRain
+  productName: "\u98DB\u9F8D\u597D\u7D2F"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}

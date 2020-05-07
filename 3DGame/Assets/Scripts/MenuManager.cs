@@ -45,4 +45,8 @@ public class MenuManager : MonoBehaviour
             ao.allowSceneActivation = true;
         }
     }
+    private void Start()
+    {
+        Screen.SetResolution(768, 1024, false);  //螢幕.設定解析度
+    }
 }

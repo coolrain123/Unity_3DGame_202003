@@ -35,7 +35,7 @@ MonoBehaviour:
         type: 3}
       x: 60
   - name: "\u7B2C3\u6CE2"
-    time: 3
+    time: 10
     Monsters:
     - Monster: {fileID: 9210515663940921989, guid: 86c3521f16a23dd4f93b59c0cecd3aef,
         type: 3}
