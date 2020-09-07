@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-
-
+using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
@@ -13,10 +12,11 @@ public class Monster : MonoBehaviour
     [Header("子彈")]
     public GameObject bullet;
 
-
+    public SpriteRenderer[] spr;
     private Animator ani;
     private float hp;
     private float timer;
+    
 
     private void Start()
     {
